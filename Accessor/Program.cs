@@ -17,6 +17,16 @@ namespace Accessor
         }
     }
 
+    //class Test
+    //{
+
+    //    public int X
+    //    {
+    //        get;
+    //        set;
+    //    }
+    //}
+
     class Program
     {
         static void Main(string[] args)
