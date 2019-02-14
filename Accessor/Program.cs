@@ -6,16 +6,29 @@ using System.Threading.Tasks;
 
 namespace Accessor
 {
+    //class Test
+    //{
+    //    private int x;
+
+    //    public int X
+    //    {
+    //        get { return x; }
+    //        set { x = value; }
+    //    }
+    //}
+
+
     class Test
     {
-        private int x;
 
         public int X
         {
-            get { return x; }
-            set { x = value; }
+            get;
+            set;
         }
     }
+
+
 
     class Program
     {
