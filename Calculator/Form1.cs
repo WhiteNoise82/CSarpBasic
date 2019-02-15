@@ -26,9 +26,16 @@ namespace Calculator
         private void btnAbs_Click(object sender, EventArgs e)
         {
             Button btn=(Button)sender;
-            
-            if(btn.Text==btnAbs.Text){
-}
+
+            if (btn.Text == btnAbs.Text)
+            {
+                int result = Program.Abs(int.Parse(txtInput.Text));
+                labelOutput.Text = string.
+            }
+            else if (btn.Text == btnSquare.Text)
+            {
+                labelOutput.Text = Program.(int.Parse(txtInput.Text));
+            }
         }
     }
 }
