@@ -22,14 +22,6 @@ namespace Collections
             foreach (int i in arrList) Console.WriteLine("{0}", i);
             #endregion
 
-            #region List<>
-            List<int> list = new List<int>();
-
-            for (int i = 0; i < 20; i++) list.Add(i + 1);
-            Console.WriteLine("- List<> -");
-            foreach (int i in list) Console.WriteLine("{0}", i);
-            #endregion
-
             #region Stack
             Stack stack = new Stack();
 
