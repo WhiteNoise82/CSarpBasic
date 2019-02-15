@@ -29,12 +29,11 @@ namespace Calculator
 
             if (btn.Text == btnAbs.Text)
             {
-                int result = Program.Abs(int.Parse(txtInput.Text));
-                labelOutput.Text = string.
+                labelOutput.Text = Program.Abs(int.Parse(txtInput.Text)).ToString();
             }
             else if (btn.Text == btnSquare.Text)
             {
-                labelOutput.Text = Program.(int.Parse(txtInput.Text));
+                labelOutput.Text = Program.Square(int.Parse(txtInput.Text)).ToString();
             }
         }
     }
