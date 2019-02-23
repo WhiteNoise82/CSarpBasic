@@ -54,10 +54,11 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(384, 261);
             this.tableLayoutPanel1.TabIndex = 5;
+            this.tableLayoutPanel1.UseWaitCursor = true;
             // 
             // btnAbs
             // 
-            this.btnAbs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbs.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.btnAbs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAbs.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnAbs.Location = new System.Drawing.Point(3, 133);
@@ -66,10 +67,12 @@
             this.btnAbs.TabIndex = 0;
             this.btnAbs.Text = "Absolute";
             this.btnAbs.UseVisualStyleBackColor = true;
+            this.btnAbs.UseWaitCursor = true;
+            this.btnAbs.Click += new System.EventHandler(this.btnAbs_Click);
             // 
             // btnSquare
             // 
-            this.btnSquare.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSquare.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.btnSquare.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSquare.Font = new System.Drawing.Font("굴림", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSquare.Location = new System.Drawing.Point(3, 198);
@@ -78,6 +81,8 @@
             this.btnSquare.TabIndex = 1;
             this.btnSquare.Text = "Square";
             this.btnSquare.UseVisualStyleBackColor = true;
+            this.btnSquare.UseWaitCursor = true;
+            this.btnSquare.Click += new System.EventHandler(this.btnAbs_Click);
             // 
             // txtInput
             // 
@@ -89,6 +94,7 @@
             this.txtInput.Size = new System.Drawing.Size(378, 59);
             this.txtInput.TabIndex = 2;
             this.txtInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtInput.UseWaitCursor = true;
             // 
             // labelOutput
             // 
@@ -100,6 +106,7 @@
             this.labelOutput.Size = new System.Drawing.Size(378, 65);
             this.labelOutput.TabIndex = 3;
             this.labelOutput.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelOutput.UseWaitCursor = true;
             // 
             // Form1
             // 
@@ -109,6 +116,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

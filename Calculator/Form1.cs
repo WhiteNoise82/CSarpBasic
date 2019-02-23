@@ -17,6 +17,24 @@ namespace Calculator
             InitializeComponent();
         }
 
-        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            txtInput.Text = "0";
+            txtInput.SelectAll();
+        }
+
+        private void btnAbs_Click(object sender, EventArgs e)
+        {
+            Button btn=(Button)sender;
+
+            if (btn.Text == btnAbs.Text)
+            {
+                labelOutput.Text = Program.Abs(int.Parse(txtInput.Text)).ToString();
+            }
+            else if (btn.Text == btnSquare.Text)
+            {
+                labelOutput.Text = Program.Square(int.Parse(txtInput.Text)).ToString();
+            }
+        }
     }
 }

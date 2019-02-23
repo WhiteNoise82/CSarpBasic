@@ -18,5 +18,15 @@ namespace Calculator
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+
+        public static int Abs(int inputNum)
+        {
+            return Math.Abs(inputNum);
+        }
+
+        public static int Square(int inputNum)
+        {
+            return inputNum * inputNum;
+        }
     }
 }
