@@ -55,6 +55,7 @@ namespace Delegate2
 
             Console.WriteLine("Sorting ascending...");
             BubbleSort(array, new Compare(AscendCompare));
+            //메서드를 BubbleSort 메서드의 매개변수로 넘긱기 위해 Delegate 사용.
 
             for (int i = 0; i < array.Length; i++)
                 Console.WriteLine($"{array[i]}");
