@@ -41,6 +41,33 @@ namespace Delegate5_AnonymousMethod
                     return 1;
                 else if (a == b)
                     return 0;
+                else
+                    return -1;
+            });
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write($"{array[i]} ");
+            }
+
+            int[] array2 = { 7, 2, 8, 10, 11 };
+            Console.WriteLine("\nSorting descending...");
+            BubbleSort(array2, delegate (int a, int b)
+             {
+                 if (a < b)
+                     return 1;
+                 else if (a == b)
+                     return 0;
+                 else
+                     return -1;
+             });
+
+            for(int i = 0; i < array2.Length; i++)
+            {
+                Console.Write($"{array2[i]} ");
+            }
+
+            Console.WriteLine();
         }
     }
 }
