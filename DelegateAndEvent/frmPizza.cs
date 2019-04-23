@@ -47,8 +47,6 @@ namespace DelegateAndEvent
                     case "오리지널":
                         iNowTime = 3000;
                         strType = "도우";
-                        
-
                         break;
                     case "씬":
                         iNowTime = 3500;
