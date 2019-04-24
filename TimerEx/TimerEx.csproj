@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8C8008FF-7C5E-4848-A15B-84E27E9AFE69}</ProjectGuid>
+    <ProjectGuid>{44084F68-1128-4F36-8551-9BED7BFE44BB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>UserControl1</RootNamespace>
-    <AssemblyName>UserControl1</AssemblyName>
+    <RootNamespace>TimerEx</RootNamespace>
+    <AssemblyName>TimerEx</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,12 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UCInfo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCInfo.Designer.cs">
-      <DependentUpon>UCInfo.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -71,11 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UCInfo.resx">
-      <DependentUpon>UCInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,11 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="image\11.png" />
-    <Content Include="image\12.png" />
-    <Content Include="image\13.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
