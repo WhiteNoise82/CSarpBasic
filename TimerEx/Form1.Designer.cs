@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblTickPoint = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.btn1add = new System.Windows.Forms.Button();
-            this.btn3add = new System.Windows.Forms.Button();
-            this.btn50add = new System.Windows.Forms.Button();
+            this.lblTickPoint = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn1Add = new System.Windows.Forms.Button();
+            this.btn3Add = new System.Windows.Forms.Button();
+            this.btn50Add = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,14 +53,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "점수";
             // 
-            // label1
+            // lblTotal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tick Point :";
+            this.lblTotal.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.lblTotal.Location = new System.Drawing.Point(6, 42);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(418, 167);
+            this.lblTotal.TabIndex = 2;
+            this.lblTotal.Text = "0";
+            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTickPoint
             // 
@@ -72,42 +73,44 @@
             this.lblTickPoint.Text = "0";
             this.lblTickPoint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblTotal
+            // label1
             // 
-            this.lblTotal.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lblTotal.Location = new System.Drawing.Point(6, 42);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(418, 167);
-            this.lblTotal.TabIndex = 2;
-            this.lblTotal.Text = "0";
-            this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tick Point :";
             // 
-            // btn1add
+            // btn1Add
             // 
-            this.btn1add.Location = new System.Drawing.Point(10, 243);
-            this.btn1add.Name = "btn1add";
-            this.btn1add.Size = new System.Drawing.Size(202, 23);
-            this.btn1add.TabIndex = 3;
-            this.btn1add.Text = "+1";
-            this.btn1add.UseVisualStyleBackColor = true;
+            this.btn1Add.Location = new System.Drawing.Point(10, 243);
+            this.btn1Add.Name = "btn1Add";
+            this.btn1Add.Size = new System.Drawing.Size(202, 23);
+            this.btn1Add.TabIndex = 3;
+            this.btn1Add.Text = "+1";
+            this.btn1Add.UseVisualStyleBackColor = true;
+            this.btn1Add.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
-            // btn3add
+            // btn3Add
             // 
-            this.btn3add.Location = new System.Drawing.Point(10, 278);
-            this.btn3add.Name = "btn3add";
-            this.btn3add.Size = new System.Drawing.Size(202, 23);
-            this.btn3add.TabIndex = 4;
-            this.btn3add.Text = "+3";
-            this.btn3add.UseVisualStyleBackColor = true;
+            this.btn3Add.Location = new System.Drawing.Point(10, 278);
+            this.btn3Add.Name = "btn3Add";
+            this.btn3Add.Size = new System.Drawing.Size(202, 23);
+            this.btn3Add.TabIndex = 4;
+            this.btn3Add.Text = "+3";
+            this.btn3Add.UseVisualStyleBackColor = true;
+            this.btn3Add.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
-            // btn50add
+            // btn50Add
             // 
-            this.btn50add.Location = new System.Drawing.Point(10, 313);
-            this.btn50add.Name = "btn50add";
-            this.btn50add.Size = new System.Drawing.Size(202, 23);
-            this.btn50add.TabIndex = 5;
-            this.btn50add.Text = "+50";
-            this.btn50add.UseVisualStyleBackColor = true;
+            this.btn50Add.Location = new System.Drawing.Point(10, 313);
+            this.btn50Add.Name = "btn50Add";
+            this.btn50Add.Size = new System.Drawing.Size(202, 23);
+            this.btn50Add.TabIndex = 5;
+            this.btn50Add.Text = "+50";
+            this.btn50Add.UseVisualStyleBackColor = true;
+            this.btn50Add.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // label2
             // 
@@ -144,10 +147,10 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btn50add);
-            this.Controls.Add(this.btn3add);
+            this.Controls.Add(this.btn50Add);
+            this.Controls.Add(this.btn3Add);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btn1add);
+            this.Controls.Add(this.btn1Add);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -164,9 +167,9 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTickPoint;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn1add;
-        private System.Windows.Forms.Button btn3add;
-        private System.Windows.Forms.Button btn50add;
+        private System.Windows.Forms.Button btn1Add;
+        private System.Windows.Forms.Button btn3Add;
+        private System.Windows.Forms.Button btn50Add;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

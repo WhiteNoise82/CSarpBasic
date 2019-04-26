@@ -79,6 +79,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControl1", "UserControl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerEx", "TimerEx\TimerEx.csproj", "{44084F68-1128-4F36-8551-9BED7BFE44BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamReaderWriter", "StreamReaderWriter\StreamReaderWriter.csproj", "{C82BF2F1-B99D-42C6-B780-5ACAFBCE6641}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -545,6 +547,18 @@ Global
 		{44084F68-1128-4F36-8551-9BED7BFE44BB}.Release|x64.Build.0 = Release|Any CPU
 		{44084F68-1128-4F36-8551-9BED7BFE44BB}.Release|x86.ActiveCfg = Release|Any CPU
 		{44084F68-1128-4F36-8551-9BED7BFE44BB}.Release|x86.Build.0 = Release|Any CPU
+		{C82BF2F1-B99D-42C6-B780-5ACAFBCE6641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C82BF2F1-B99D-42C6-B780-5ACAFBCE6641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C82BF2F1-B99D-42C6-B780-5ACAFBCE6641}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C82BF2F1-B99D-42C6-B780-5ACAFBCE6641}.Debug|x64.Build.0 = Debug|Any CPU
+		{C82BF2F1-B99D-42C6-B780-5ACAFBCE6641}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C82BF2F1-B99D-42C6-B780-5ACAFBCE6641}.Debug|x86.Build.0 = Debug|Any CPU
+		{C82BF2F1-B99D-42C6-B780-5ACAFBCE6641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C82BF2F1-B99D-42C6-B780-5ACAFBCE6641}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C82BF2F1-B99D-42C6-B780-5ACAFBCE6641}.Release|x64.ActiveCfg = Release|Any CPU
+		{C82BF2F1-B99D-42C6-B780-5ACAFBCE6641}.Release|x64.Build.0 = Release|Any CPU
+		{C82BF2F1-B99D-42C6-B780-5ACAFBCE6641}.Release|x86.ActiveCfg = Release|Any CPU
+		{C82BF2F1-B99D-42C6-B780-5ACAFBCE6641}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
