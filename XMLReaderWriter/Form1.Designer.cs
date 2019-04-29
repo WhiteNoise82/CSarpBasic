@@ -1,4 +1,4 @@
-﻿namespace StreamReaderWriter
+﻿namespace XMLReaderWriter
 {
     partial class Form1
     {
@@ -179,6 +179,7 @@
             this.Controls.Add(this.btnLoad);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numData)).EndInit();

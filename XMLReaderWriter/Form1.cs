@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StreamReaderWriter
+
+namespace XMLReaderWriter
 {
     public partial class Form1 : Form
     {
+        CXMLControl _XML = new CXMLControl();
+
+        Dictionary<string, string> _dData = new Dictionary<string, string>();
+
         public Form1()
         {
             InitializeComponent();
@@ -37,6 +37,12 @@ namespace StreamReaderWriter
             sb.Append(iNumber.ToString());
 
             tboxConfigData.Text = sb.ToString();
+
+            _dData.Clear();
+
+            _dData.Add(CXMLControl._TEXT_DATA, strText);
+            _dData.Add(CXMLControl._CBOX_DATA, bChecked.ToString());
+            _dData.Add(CXMLControl._NUMBER_DATA, iNumber.ToString());
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
@@ -44,8 +50,8 @@ namespace StreamReaderWriter
             string strFilePath = string.Empty;
 
             SFDialog.InitialDirectory = Application.StartupPath;  //프로그램 실행파일 위치
-            SFDialog.FileName = "*.txt";
-            SFDialog.Filter = "txt files (*.txt)|*.txt|All file (*.*)|*.*";
+            SFDialog.FileName = "*.xml";
+            SFDialog.Filter = "xml files (*.xml)|*.xml|All file (*.*)|*.*";
 
             if (SFDialog.ShowDialog() == DialogResult.OK)
             {
@@ -56,7 +62,9 @@ namespace StreamReaderWriter
                 //swSFDialog.WriteLine(tboxConfigData.Text);
                 //swSFDialog.Close();
 
-                File.WriteAllText(strFilePath, tboxConfigData.Text);
+                //File.WriteAllText(strFilePath, tboxConfigData.Text);
+
+                _XML.fXML_Writer(strFilePath, _dData);
             }
         }
 
@@ -95,6 +103,11 @@ namespace StreamReaderWriter
             tboxData.Text = strConfig[0];
             cboxData.Checked = bool.Parse(strConfig[1]);
             numData.Value = int.Parse(strConfig[2]);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
