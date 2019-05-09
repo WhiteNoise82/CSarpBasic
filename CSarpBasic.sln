@@ -81,9 +81,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerEx", "TimerEx\TimerEx.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamReaderWriter", "StreamReaderWriter\StreamReaderWriter.csproj", "{C82BF2F1-B99D-42C6-B780-5ACAFBCE6641}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ex01", "Ex01\Ex01.csproj", "{900DD3A4-8894-48CC-A2CD-74534108DA1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ex01", "Ex01\Ex01.csproj", "{900DD3A4-8894-48CC-A2CD-74534108DA1D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLReaderWriter", "XMLReaderWriter\XMLReaderWriter.csproj", "{277E0C9D-0622-4021-A2AD-2C5A904824B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncryptionDecryption_Rijndael", "EncryptionDecryption_Rijndael\EncryptionDecryption_Rijndael.csproj", "{59E1BA0D-D106-469C-8DF6-7C5C35C0BECA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -587,6 +589,18 @@ Global
 		{277E0C9D-0622-4021-A2AD-2C5A904824B2}.Release|x64.Build.0 = Release|Any CPU
 		{277E0C9D-0622-4021-A2AD-2C5A904824B2}.Release|x86.ActiveCfg = Release|Any CPU
 		{277E0C9D-0622-4021-A2AD-2C5A904824B2}.Release|x86.Build.0 = Release|Any CPU
+		{59E1BA0D-D106-469C-8DF6-7C5C35C0BECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59E1BA0D-D106-469C-8DF6-7C5C35C0BECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59E1BA0D-D106-469C-8DF6-7C5C35C0BECA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{59E1BA0D-D106-469C-8DF6-7C5C35C0BECA}.Debug|x64.Build.0 = Debug|Any CPU
+		{59E1BA0D-D106-469C-8DF6-7C5C35C0BECA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{59E1BA0D-D106-469C-8DF6-7C5C35C0BECA}.Debug|x86.Build.0 = Debug|Any CPU
+		{59E1BA0D-D106-469C-8DF6-7C5C35C0BECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59E1BA0D-D106-469C-8DF6-7C5C35C0BECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59E1BA0D-D106-469C-8DF6-7C5C35C0BECA}.Release|x64.ActiveCfg = Release|Any CPU
+		{59E1BA0D-D106-469C-8DF6-7C5C35C0BECA}.Release|x64.Build.0 = Release|Any CPU
+		{59E1BA0D-D106-469C-8DF6-7C5C35C0BECA}.Release|x86.ActiveCfg = Release|Any CPU
+		{59E1BA0D-D106-469C-8DF6-7C5C35C0BECA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

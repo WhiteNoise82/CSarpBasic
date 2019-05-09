@@ -73,8 +73,8 @@ namespace XMLReaderWriter
             string strFilePath = string.Empty;
 
             OFDialog.InitialDirectory = Application.StartupPath;  //프로그램 실행파일 위치
-            OFDialog.FileName = "*.txt";
-            OFDialog.Filter = "txt files (*.txt)|*.txt|All file (*.*)|*.*";
+            OFDialog.FileName = "*.xml";
+            OFDialog.Filter = "xml files (*.xml)|*.xml|All file (*.*)|*.*";
 
             StringBuilder sb = new StringBuilder();
 
@@ -93,16 +93,23 @@ namespace XMLReaderWriter
                 sb.Append(File.ReadAllText(strFilePath));
 
                 tboxConfigData.Text = sb.ToString();
+
+                _dData.Clear();
+                _dData = _XML.FXML_Reader(strFilePath);
             }
         }
 
         private void BtnConfigRead_Click(object sender, EventArgs e)
         {
-            string[] strConfig = tboxConfigData.Text.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            //string[] strConfig = tboxConfigData.Text.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
-            tboxData.Text = strConfig[0];
-            cboxData.Checked = bool.Parse(strConfig[1]);
-            numData.Value = int.Parse(strConfig[2]);
+            //tboxData.Text = strConfig[0];
+            //cboxData.Checked = bool.Parse(strConfig[1]);
+            //numData.Value = int.Parse(strConfig[2]);
+
+            tboxData.Text = _dData[CXMLControl._TEXT_DATA];
+            cboxData.Checked = bool.Parse(_dData[CXMLControl._CBOX_DATA]);
+            numData.Value = int.Parse(_dData[CXMLControl._NUMBER_DATA]);
         }
 
         private void Form1_Load(object sender, EventArgs e)
