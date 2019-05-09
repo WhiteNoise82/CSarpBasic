@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,10 @@ namespace EncryptionDecryption_Rijndael
 {
     public partial class Form1 : Form
     {
+        Dictionary<string, string> _dData = new Dictionary<string, string>();
+        CXMLControl _xml = new CXMLControl();
+        string strPath = Application.StartupPath + "\\Save.txt";
+
         private double iTick = 0;
         private double iTotal = 0;
 
@@ -32,6 +37,17 @@ namespace EncryptionDecryption_Rijndael
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (File.Exists(strPath))
+            {
+                _dData = _xml.FXML_Reader(strPath);
+
+                iTick = double.Parse(_dData[CXMLControl._TICK]);
+                iTotal = double.Parse(_dData[CXMLControl._TOTAL]);
+                i1Level = int.Parse(_dData[CXMLControl._LEVEL_1]);
+                i3Level = int.Parse(_dData[CXMLControl._LEVEL_3]);
+                i50Level = int.Parse(_dData[CXMLControl._LEVEL_50]);
+            }
+
             Timer oTimer = new Timer();
 
             oTimer.Enabled = true;
@@ -86,6 +102,19 @@ namespace EncryptionDecryption_Rijndael
                 default:
                     break;
             }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _dData.Clear();
+
+            _dData.Add(CXMLControl._TICK, iTick.ToString());
+            _dData.Add(CXMLControl._TOTAL, iTotal.ToString());
+            _dData.Add(CXMLControl._LEVEL_1, i1Level.ToString());
+            _dData.Add(CXMLControl._LEVEL_3, i3Level.ToString());
+            _dData.Add(CXMLControl._LEVEL_50, i50Level.ToString());
+
+            _xml.fXML_Writer(strPath, _dData);
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -17,9 +19,13 @@ namespace EncryptionDecryption_Rijndael
 
         public Dictionary<string, string> FXML_Reader(string strXMLPath)
         {
+            string strRijndaelText = File.ReadAllText(strXMLPath);
+            string strDECText = CRijndael.DecryptString(strRijndaelText, CRijndael._bKey);
+
             Dictionary<string, string> DXMLConfig = new Dictionary<string, string>();
 
-            using (XmlReader rd = XmlReader.Create(strXMLPath))
+            //using (XmlReader rd = XmlReader.Create(strXMLPath))
+            using (XmlReader rd = XmlReader.Create(new StringReader(strDECText)))
             {
                 while (rd.Read())
                 {
@@ -30,14 +36,18 @@ namespace EncryptionDecryption_Rijndael
                             string strID = rd["ID"];
                             rd.Read();
 
-                            string strTEXT = rd.ReadElementContentAsString(_TICK, "");
-                            DXMLConfig.Add(_TICK, strTEXT);
+                            string strTICK = rd.ReadElementContentAsString(_TICK, "");
+                            DXMLConfig.Add(_TICK, strTICK);
 
-                            string strCBOX = rd.ReadElementContentAsString(_TOTAL, "");
-                            DXMLConfig.Add(_TOTAL, strCBOX);
+                            string strTOTAL = rd.ReadElementContentAsString(_TOTAL, "");
+                            DXMLConfig.Add(_TOTAL, strTOTAL);
 
-                            string strNUMBER = rd.ReadElementContentAsString(_LEVEL_1, "");
-                            DXMLConfig.Add(_LEVEL_1, strNUMBER);
+                            string strLEVEL_1 = rd.ReadElementContentAsString(_LEVEL_1, "");
+                            DXMLConfig.Add(_LEVEL_1, strLEVEL_1);
+                            string strLEVEL_3 = rd.ReadElementContentAsString(_LEVEL_3, "");
+                            DXMLConfig.Add(_LEVEL_3, strLEVEL_3);
+                            string strLEVEL_50 = rd.ReadElementContentAsString(_LEVEL_50, "");
+                            DXMLConfig.Add(_LEVEL_50, strLEVEL_50);
                         }
                     }
                 }
@@ -48,7 +58,10 @@ namespace EncryptionDecryption_Rijndael
 
         public void fXML_Writer(string strXMLPath, Dictionary<string, string> DXMLConfig)
         {
-            using(XmlWriter wr = XmlWriter.Create(strXMLPath))
+            StringBuilder sb = new StringBuilder();
+
+            //using(XmlWriter wr = XmlWriter.Create(strXMLPath))
+            using (XmlWriter wr = XmlWriter.Create(sb))
             {
                 wr.WriteStartDocument();
 
@@ -65,6 +78,9 @@ namespace EncryptionDecryption_Rijndael
                 wr.WriteEndElement();
                 wr.WriteEndDocument();
             }
+            string strRijndaelText = CRijndael.EncryptString(sb.ToString(), CRijndael._bKey);
+
+            File.WriteAllText(strXMLPath, strRijndaelText);
         }
     }
 }
